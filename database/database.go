@@ -5,6 +5,7 @@ import (
 	"os"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/xiangrui2019/go-dev-as-code/models"
 	"github.com/xormplus/xorm"
 )
 
@@ -23,4 +24,5 @@ func init() {
 }
 
 func MigrationDatabase() {
+	XEngine.Sync2(new(models.User))
 }
